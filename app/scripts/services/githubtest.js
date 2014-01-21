@@ -14,7 +14,7 @@ angular.module('eventsAppApp')
                     username + '/' +
                     path + '?callback=JSON_CALLBACK'
             });
-        }
+        };
 
         return {
             events: function(username) {

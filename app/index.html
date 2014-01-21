@@ -60,9 +60,78 @@
                       </li>
                     </ul>
                   </section>
-                  <section id="module-position-3" class="card-primary hero-module">
+<!-- best bets controller -->
+                  <section id="module-position-3" class="card-primary hero-module" ng-controller="BestbetscontrollerCtrl" ng-cloak>
                     <div class="front-bump-shadow"></div>
                     <!-- hero stuff -->
+                    <div class="hero hero-3up card-hero-3up">
+                              <div class="hero-3up-tile hero-asset-open card-hero-3up-tile opinion active card-hero-3up-tile-1 hero-3up-tile-1">
+                              <span class="parent-label opinion"> {{events[0].categories[1].name}} </span>
+                              <div class="hero-3up-media">
+                                  <a href="#">
+                                      <img src="">
+                                  </a>
+                                  <div class="hero-text">
+                                    <div class="hero-story">
+                                        <h1>
+                                            <a class="load story" href="#">{{events[0].title}}</a>
+                                        </h1>
+                                        <ul class="actions clearfix">
+                                          <li class="readContainer hero-actions-list-items">
+                                              <a class="spike read" href="#">{{events[0].online_description | limitTo: 75}} </a>
+                                          </li>
+                                          <li class="hero-actions-list-items">
+                                              <div class="byline-block">
+                                                  <span class="byline">
+                                                    <span class="author"><em>{{events[0].location}}</em></span>
+                                                  </span>
+                                              </div>
+                                          </li>
+                                        </ul>
+                                    </div>
+                                  </div>  
+                              </div>
+                        </div>
+
+                      <div class="hero-3up-tile hero-asset-open card-hero-3up-tile opinion card-hero-3up-tile-2 hero-3up-tile-2">
+                          <span class="parent-label opinion">{{events[1].categories[1].name}}</span>
+                          <div class="hero-3up-media">
+                              <a href="#">
+                                  <img src="">
+                              </a>
+                              <div class="hero-text">
+                                  <div class="hero-story">
+                                      <h1><a class="load-story" href="#">{{events[1].title}}</a>
+                                      </h1>
+                                      <ul class="actions clearfix">
+                                          <li class="readContainer hero-actions-list-items">
+                                              <a class="spike read" href="#">{{events[1].occurrences[0].startdatetime | date:'MM/dd/yyyy @ h:m'}}</a>
+                                          </li>
+                                      </ul>
+                                  </div>
+                              </div>
+                          </div>
+                         <div class="hero-3up-tile hero-asset-open card-hero-3up-tile opinion card-hero-3up-tile-3 hero-3up-tile-3">
+                            <span class="parent-label opinion">{{events[2].categories[0].name}}</span>
+                            <div class="hero-3up-media">
+                                <a href="#">
+                                    <img src="">
+                                </a>
+                                <div class="hero-text">
+                                    <div class="hero-story">
+                                        <h1><a class="load-story" href="#">{{events[2].title}}</a></h1>
+                                        <ul class="actions clearfix">
+                                            <li class="readContainer hero-actions-list-items">
+                                                <a class="spike read" href="#">{{events[2].occurrences[0].startdatetime | date:'MM/dd/yyyy @ h:m'}}</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>  
+                         </div>
+                      </div>
+
+
                     <div class="below-hero-ad-module clearfix">
                       <div class="below-hero-popular"></div>
                       <div class="below-hero-ad partner-placement"></div>
@@ -116,31 +185,51 @@
                   <section id="module-position-7" class="card-primary headline-grid-module">
                     <div class="front-headlines-header">
 <!-- enter search function here -->
-                      <h5 class="headlines-header-title">Headlines</h5>
-                      <p class="headlines-header-time">Updated 2:35 p.m. EST</p>
-                      <div ng-controller="GithubuserCtrl">
-                        <label for='username'>
-                          Search Placeholder
-                        </label>
-                        <input type='text'
-                            ng-model='username'
-                            placeholder="Search Placeholder" />
+                      <h5 class="headlines-header-title">Upcoming Events</h5>
+                      <p class="headlines-header-time"></p>
 
-                        <ul>
-                          <li ng-repeat="event in events">
-                            {{event.actor.login}} {{event.repo.name}}
-                          </li>
-                        </ul>
-                      </div>
                       <ul class="ui-button-toggle ui-light headline-toggler front-headline-toggler ">
                         <li class="ui-button-toggle-item ui-btn grid-big headline-toggler-gridview active">Grid</li>
                         <li class="ui-button-toggle-item ui-btn list-big headline-toggler-listview ">List</li>
                       </ul>
                     </div>
-                    <div class="headline-collection clearfix" data-vr-zone="Headline-Grid" data-items-per-page="9">
+                    <div class="headline-collection clearfix listview" data-vr-zone="Headline-Grid">
 
-<!-- enter auto-repeating stuff here -->
+                      <div class="headline-page active"  ng-controller="EventsListController" ng-cloak>
+                        <div class="headline headline-asset-item headline-asset-item-card hasimage" ng-repeat="event in events">
+
+                           <a class="anchor headline-grid-load-story" href="{{event.listing.display_url}}">
+                            <div class="headline-asset-item-front tile headline-asset-item-news-tile headline-asset-item-tile">
+                              <div class="image-wrap">
+                                <img src="{{event.photos[0].image}}" width="200" height="220" alt="{{event.online_description}}" class="headline-grid-image">
+                              </div>
+                              <h3 class="title image headline-asset-item-front-title">
+                                <span class="content-info-icon-text">{{event.title}}</span>
+                              </h3>
+                            </div>
+                            <div class="headline-asset-item-back tile headline-asset-item-tile headline-asset-item-news-tile ">
+                              <h3 class="title headline-asset-item-back-title">{{event.title}}</h3>
+                              <p class="headline-asset-item-back-text" data-fulltext="{{event.online_description}}">{{event.online_description | limitTo: 75 }}</p>
+                              <p class="headline-asset-item-back-listview-text" data-fulltext="{{event.online_description}}">{{event.online_description | limitTo: 75 }}</p>
+                              <ul class="headline-asset-item-meta ">
+                                <li class="headline-asset-item-section">
+                                  <span class="content-info-icon-text">{{event.categories[1].name}}</span>
+                                </li>
+                                <li class="headline-asset-item-time">
+                                  <span>Time till start *TBD* {{event.occurrences[0].startdatetime | date:'MM/dd @ h:m'}}</span>
+                                </li>
+                              </ul>
+                              <div class="authors byline byline-nopub headline-asset-item-byline">
+                                <span class="author"><em>{{event.listing.phone}}</em></span>
+                              </div>
+                            </div>
+                          </a>
+                          </div>
+
+                      </div>
                     </div>
+<!-- enter auto-repeating stuff here -->
+                    
                     <div class="headlines-show-more">
 <!-- link to load next 9 events -->
                       <a href="#" class="button-add-content" data-default="Show More News" data-next="" data-loading="Loading More News">Show More News</a>
@@ -159,6 +248,21 @@
                     <div class="sidebar-fixed-content" >                      
                     </div>
                     <div class="sidebar-scrollable-window">
+                      <div ng-controller="GithubuserCtrl" ng-cloak>
+                        <label for='username'>
+                          Search Placeholder
+                        </label>
+                        <input type='text'
+                            ng-model='username'
+                            placeholder="Search Placeholder" />
+
+                        <ul>
+                          <li ng-repeat="event in events" style="color:white;">
+                            {{event.actor.login}} {{event.repo.name}}
+                          </li>
+                        </ul>
+                      </div>
+
 
                     </div>
                   </div>
@@ -230,6 +334,8 @@
         <script src="scripts/services/pdAPICall.js"></script>
         <script src="scripts/services/githubTest.js"></script>
         <script src="scripts/controllers/githubUser.js"></script>
+        <script src="scripts/directives/mainEventView.js"></script>
+        <script src="scripts/controllers/bestbetsController.js"></script>
         <!-- endbuild -->
 </body>
 </html>
