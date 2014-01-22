@@ -31,6 +31,7 @@
 
     <!-- Add your site or application content here -->
     <div class="container">
+      <div ng-view></div>
       <article id="cards" class="cards">
         <div class="partner-placement partner-slider-ad">
           <a href="#" class="partner-slider-close ui-sprite-before">Close</a>
@@ -51,7 +52,7 @@
                     <p class="slst-header">Quick Links</p>
                     <ul class="quick-links-list">
                       <li class="quick-links-item">
-                        <a href="https://account.indystar.com/" class="clst-link" data-uotrack="quick-links-subscriber services" target="_blank">Best Bets</a>
+                        <a href="/bestbets/" class="clst-link" data-uotrack="quick-links-subscriber services">Best Bets</a>
                       </li>
                       <li class="quick-links-item">
                         <a href="https://myaccount.indystar.com/e-ed" class="clst-link" data-uotrack="quick-links-e-newspaper" target="_blank">Family Friendly</a>
@@ -68,17 +69,17 @@
                               <div class="hero-3up-tile hero-asset-open card-hero-3up-tile opinion active card-hero-3up-tile-1 hero-3up-tile-1">
                               <span class="parent-label opinion"> {{events[0].categories[1].name}} </span>
                               <div class="hero-3up-media">
-                                  <a href="#">
-                                      <img src="">
+                                  <a href="#/events/{{events[0].id}}">
+                                      <img src="http://lorempixel.com/g/480/480/">
                                   </a>
                                   <div class="hero-text">
                                     <div class="hero-story">
                                         <h1>
-                                            <a class="load story" href="#">{{events[0].title}}</a>
+                                            <a class="load story" href="#/events/{{events[0].id}}">{{events[0].title}}</a>
                                         </h1>
                                         <ul class="actions clearfix">
                                           <li class="readContainer hero-actions-list-items">
-                                              <a class="spike read" href="#">{{events[0].online_description | limitTo: 75}} </a>
+                                              <a class="spike read" href="#/events/{{events[0].id}}">{{events[0].online_description | limitTo: 100}} </a>
                                           </li>
                                           <li class="hero-actions-list-items">
                                               <div class="byline-block">
@@ -97,7 +98,7 @@
                           <span class="parent-label opinion">{{events[1].categories[1].name}}</span>
                           <div class="hero-3up-media">
                               <a href="#">
-                                  <img src="">
+                                  <img src="http://lorempixel.com/g/240/240/">
                               </a>
                               <div class="hero-text">
                                   <div class="hero-story">
@@ -105,7 +106,7 @@
                                       </h1>
                                       <ul class="actions clearfix">
                                           <li class="readContainer hero-actions-list-items">
-                                              <a class="spike read" href="#">{{events[1].occurrences[0].startdatetime | date:'MM/dd/yyyy @ h:m'}}</a>
+                                              <a class="spike read" href="#">{{events[1].occurrences[0].startdatetime | date:'MM/dd/yyyy'}}</a>
                                           </li>
                                       </ul>
                                   </div>
@@ -115,7 +116,7 @@
                             <span class="parent-label opinion">{{events[2].categories[0].name}}</span>
                             <div class="hero-3up-media">
                                 <a href="#">
-                                    <img src="">
+                                    <img src="http://lorempixel.com/g/240/240/">
                                 </a>
                                 <div class="hero-text">
                                     <div class="hero-story">
@@ -198,10 +199,10 @@
                       <div class="headline-page active"  ng-controller="EventsListController" ng-cloak>
                         <div class="headline headline-asset-item headline-asset-item-card hasimage" ng-repeat="event in events">
 
-                           <a class="anchor headline-grid-load-story" href="{{event.listing.display_url}}">
+                           <a class="anchor headline-grid-load-story" href="#/events/{{event.categories[1].name}}/{{event.title}}">
                             <div class="headline-asset-item-front tile headline-asset-item-news-tile headline-asset-item-tile">
                               <div class="image-wrap">
-                                <img src="{{event.photos[0].image}}" width="200" height="220" alt="{{event.online_description}}" class="headline-grid-image">
+                                <img src="{{event.photos[0].image}}http://lorempixel.com/g/200/220/" width="200" height="220" alt="{{event.online_description}}" class="headline-grid-image">
                               </div>
                               <h3 class="title image headline-asset-item-front-title">
                                 <span class="content-info-icon-text">{{event.title}}</span>
@@ -245,23 +246,46 @@
                     <div class="icon"></div>
                   </a>
                   <div class="sidebar-wrapper">
-                    <div class="sidebar-fixed-content" >                      
+                    <div class="sidebar-fixed-content" > 
+<!-- clean up this garbage -->
+                    <section id="module-position-5" class="card-sidebar local-weather-module local-weather-sidebar"><div class="sidebar-title-wrapper"><h6 class="sidebar-title local-weather-sidebar-title home">Local Weather</h6></div><div class="sidebar-content local-weather-sidebar-content home"><div class="local-weather-sidebar-module"><p class="local-weather-location">Indianapolis, IN</p><div class="right-now-sponsor-wrapper"><div class="partner-placement right-now-weather-sponsorship-ad" id="ad-position-42" data-monetization-id="sponsor_logo_front" data-monetization-sizes="sponsor_logo_medium"><div class="right-now-weather-presented sponsored-by-text">presented by</div><div id="ad-slot-7103-in-indianapolis-C1532-sponsor_logo_front-homepage-44" class="ad-slot" style="display: none;"><div id="google_ads_iframe_7103/in-indianapolis-C1532/sponsor_logo_front/homepage_0__container__" style="border: 0pt none;"><iframe id="google_ads_iframe_7103/in-indianapolis-C1532/sponsor_logo_front/homepage_0" name="google_ads_iframe_7103/in-indianapolis-C1532/sponsor_logo_front/homepage_0" width="100" height="50" scrolling="no" marginwidth="0" marginheight="0" frameborder="0" src="javascript:&quot;<html><body style='background:transparent'></body></html>&quot;" style="border: 0px; vertical-align: bottom;"></iframe></div><iframe id="google_ads_iframe_7103/in-indianapolis-C1532/sponsor_logo_front/homepage_0__hidden__" name="google_ads_iframe_7103/in-indianapolis-C1532/sponsor_logo_front/homepage_0__hidden__" width="0" height="0" scrolling="no" marginwidth="0" marginheight="0" frameborder="0" src="javascript:&quot;<html><body style='background:transparent'></body></html>&quot;" style="border: 0px; vertical-align: bottom; visibility: hidden; display: none;"></iframe></div></div></div><ul class="local-weather-forecast"><li class="local-weather-forecast-item first"><p class="local-weather-forecast-hour">Wednesday</p><div class="local-weather-wicon wicon-31" title=""></div><p class="local-weather-forecast-temperature">20<sup>°</sup>/0<sup>°</sup></p></li><li class="local-weather-forecast-item "><p class="local-weather-forecast-hour">Thursday</p><div class="local-weather-wicon wicon-3" title=""></div><p class="local-weather-forecast-temperature">10<sup>°</sup>/-2<sup>°</sup></p></li><li class="local-weather-forecast-item "><p class="local-weather-forecast-hour">Friday</p><div class="local-weather-wicon wicon-2" title=""></div><p class="local-weather-forecast-temperature">19<sup>°</sup>/17<sup>°</sup></p></li><li class="local-weather-forecast-item "><p class="local-weather-forecast-hour">Saturday</p><div class="local-weather-wicon wicon-7" title=""></div><p class="local-weather-forecast-temperature">28<sup>°</sup>/4<sup>°</sup></p></li></ul><p class="local-weather-more-btn-wrap"><a class="ui-btn ui-dark local-weather-btn" href="/weather/" data-ht="localweather|moreweather">More Weather</a></p></div></div></section>
+                    <section id="module-position-17" class="card-sidebar sidebar-poster-ad-module sidebar-poster-ad-sidebar">
+                      <div class="partner-placement partner-sidebar-ad" id="ad-position-50" data-monetization-id="poster_front" data-monetization-sizes="mediumrectangle,halfpage" style="display: block;">
+                        <div id="ad-slot-7103-in-indianapolis-C1532-poster_front-homepage-52" class="ad-slot">
+                          <div style="height:250px; width:300px; background-color:white;">
+                            <center><h1>AD</h1></center>
+                          </div>
+                        </div>
+                      </div>
+                    </section>                     
                     </div>
                     <div class="sidebar-scrollable-window">
-                      <div ng-controller="GithubuserCtrl" ng-cloak>
-                        <label for='username'>
-                          Search Placeholder
-                        </label>
-                        <input type='text'
-                            ng-model='username'
-                            placeholder="Search Placeholder" />
+                      <section id="module-position-10" class="card-sidebar livefeed-module livefeed-sidebar">
 
-                        <ul>
-                          <li ng-repeat="event in events" style="color:white;">
-                            {{event.actor.login}} {{event.repo.name}}
-                          </li>
-                        </ul>
-                      </div>
+                                  <div class="sidebar-title-wrapper" style-"display:none;">
+                                         <h6 class="sidebar-title livefeed-sidebar-title opinion">Best Bets</h6>
+                                  </div>
+                                  <div class="sidebar-content livefeed-sidebar-content opinion" ng-controller="BestbetssidebarCtrl" ng-cloak>
+                                    <ul class="livefeed-news-list opinion live-feed-wide" >
+                                      <li class="live-feed-news-item opinion has-image" ng-repeat="event in events">
+                                        <a href="#" class="livefeed-news-item-link livefeed-li-first">
+                                          <div class="live-feed-thumb">
+                                            <img src="" class="live-feed-thumb-img">
+                                          </div>
+                                          <div class="live-feed-layout" style="float:right;">
+                                            <p class="live-feed-time-since">
+                                              <span class="live-feed-humanized live-feed-timesince-span opinion">Time</span>
+                                            </p>
+                                          </div>
+                                          <p class="live-feed-headline article" style="width:200px; padding-top:0px;">{{event.title}}</p>
+                                          <p class="live-feed-headline-event-details" style="max-width:201px; float:left; font-size:12px;">{{event.occurrences[0].startdatetime}}<br />Location</p>
+                                          <div class="clearfix-1440"></div>
+                                        </a>
+                                      </li>
+                                    </ul>
+                                  </div>
+                                </section>
+
 
 
                     </div>
@@ -277,7 +301,7 @@
 
     <starfooter></starfooter>
 
-        <div class="partner-overlay">
+    <div class="partner-overlay">
           <div class="partner-placement" id="ad-position-37" data-monetization-id="high_impact" data-monetization-sizes="elastic">
             <a href="#" class="partner-close partner-overlay-close"></a>
           </div>
@@ -336,6 +360,10 @@
         <script src="scripts/controllers/githubUser.js"></script>
         <script src="scripts/directives/mainEventView.js"></script>
         <script src="scripts/controllers/bestbetsController.js"></script>
+        <script src="scripts/controllers/eventView.js"></script>
+        <script src="scripts/controllers/advSearch.js"></script>
+        <script src="scripts/controllers/bestbetsSidebar.js"></script>
+        <script src="scripts/services/singleevent.js"></script>
         <!-- endbuild -->
 </body>
 </html>

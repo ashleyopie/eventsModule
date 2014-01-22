@@ -1,8 +1,9 @@
 'use strict';
 
 angular.module('eventsAppApp')
-    .factory('pdAPItest', function($http) {
+    .factory('singleevent', function($http) {
         // Service logic
+        // ...
         // ...
         var offset = new Date().getTimezoneOffset();
 
@@ -32,41 +33,20 @@ angular.module('eventsAppApp')
         //CORS support
         //delete $http.defaults.headers.common['X-Requested-With'];
 
-        var runEventRequest = function() {
+        var getEvent = function(eventId) {
             return $http({
 
                 method: 'POST',
                 url: pdUrl +
                     '&api_key=' + api_key +
-                    '&sd=' + today +
-                    '&ed=' + futureDate +
-                    '&limit=' + 15 +
-                    '&sort=' + 'startDate'
+                    '&ids=' + eventId
             });
         };
 
-        var getBestBets = function() {
-            return $http({
-
-                method: 'POST',
-                url: pdUrl +
-                    '&api_key=' + api_key +
-                    '&sd=' + today +
-                    '&sort=' + 'startDate' +
-                    '&attribFilter=' + '(attr_best_bet=yes)' +
-                    '&limit=' + 3
-
-
-
-            });
-        };
 
         return {
-            events: function() {
-                return runEventRequest('events');
-            },
-            bestBets: function() {
-                return getBestBets('events');
+            events: function(eventId) {
+                return getEvent(eventId);
             }
         };
     });
