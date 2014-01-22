@@ -97,16 +97,16 @@
                       <div class="hero-3up-tile hero-asset-open card-hero-3up-tile opinion card-hero-3up-tile-2 hero-3up-tile-2">
                           <span class="parent-label opinion">{{events[1].categories[1].name}}</span>
                           <div class="hero-3up-media">
-                              <a href="#">
+                              <a href="#/events/{{events[1].id}}">
                                   <img src="http://lorempixel.com/g/240/240/">
                               </a>
                               <div class="hero-text">
                                   <div class="hero-story">
-                                      <h1><a class="load-story" href="#">{{events[1].title}}</a>
+                                      <h1><a class="load-story" href="#/events/{{events[1].id}}">{{events[1].title}}</a>
                                       </h1>
                                       <ul class="actions clearfix">
                                           <li class="readContainer hero-actions-list-items">
-                                              <a class="spike read" href="#">{{events[1].occurrences[0].startdatetime | date:'MM/dd/yyyy'}}</a>
+                                              <a class="spike read" href="#/events/{{events[1].id}}">{{events[1].occurrences[0].startdatetime | date:'MM/dd/yyyy'}}</a>
                                           </li>
                                       </ul>
                                   </div>
@@ -115,15 +115,15 @@
                          <div class="hero-3up-tile hero-asset-open card-hero-3up-tile opinion card-hero-3up-tile-3 hero-3up-tile-3">
                             <span class="parent-label opinion">{{events[2].categories[0].name}}</span>
                             <div class="hero-3up-media">
-                                <a href="#">
+                                <a href="#/events/{{events[2].id}}">
                                     <img src="http://lorempixel.com/g/240/240/">
                                 </a>
                                 <div class="hero-text">
                                     <div class="hero-story">
-                                        <h1><a class="load-story" href="#">{{events[2].title}}</a></h1>
+                                        <h1><a class="load-story" href="#/events/{{events[2].id}}">{{events[2].title}}</a></h1>
                                         <ul class="actions clearfix">
                                             <li class="readContainer hero-actions-list-items">
-                                                <a class="spike read" href="#">{{events[2].occurrences[0].startdatetime | date:'MM/dd/yyyy @ h:m'}}</a>
+                                                <a class="spike read" href="#/events/{{events[2].id}}">{{events[2].occurrences[0].startdatetime | date:'MM/dd/yyyy @ h:m'}}</a>
                                             </li>
                                         </ul>
                                     </div>
@@ -199,10 +199,10 @@
                       <div class="headline-page active"  ng-controller="EventsListController" ng-cloak>
                         <div class="headline headline-asset-item headline-asset-item-card hasimage" ng-repeat="event in events">
 
-                           <a class="anchor headline-grid-load-story" href="#/events/{{event.categories[1].name}}/{{event.title}}">
+                           <a class="anchor headline-grid-load-story" href="#/events/{{event.id}}">
                             <div class="headline-asset-item-front tile headline-asset-item-news-tile headline-asset-item-tile">
                               <div class="image-wrap">
-                                <img src="{{event.photos[0].image}}http://lorempixel.com/g/200/220/" width="200" height="220" alt="{{event.online_description}}" class="headline-grid-image">
+                                <img src="http://lorempixel.com/g/200/220/{{event.photos[0].image}}" width="200" height="220" alt="{{event.online_description}}" class="headline-grid-image">
                               </div>
                               <h3 class="title image headline-asset-item-front-title">
                                 <span class="content-info-icon-text">{{event.title}}</span>
@@ -262,7 +262,7 @@
                     <div class="sidebar-scrollable-window">
                       <section id="module-position-10" class="card-sidebar livefeed-module livefeed-sidebar">
 
-                                  <div class="sidebar-title-wrapper" style-"display:none;">
+                                  <div class="sidebar-title-wrapper" style="display:none;">
                                          <h6 class="sidebar-title livefeed-sidebar-title opinion">Best Bets</h6>
                                   </div>
                                   <div class="sidebar-content livefeed-sidebar-content opinion" ng-controller="BestbetssidebarCtrl" ng-cloak>

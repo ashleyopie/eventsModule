@@ -13,7 +13,7 @@ angular.module('eventsAppApp', [
                 controller: 'MainCtrl'
             })
             .when('/events/:eventId', {
-                templateUrl: '/views/partials/eventview.html',
+                templateUrl: 'views/partials/eventview.html',
                 controller: 'EventviewCtrl'
             })
             .when('/search', {
@@ -27,5 +27,5 @@ angular.module('eventsAppApp', [
             .otherwise({
                 redirectTo: '/'
             });
-        $locationProvider.html5Mode(true);
+        //$locationProvider.html5Mode(true);
     });
