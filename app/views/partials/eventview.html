@@ -10,23 +10,31 @@
                               <div class="util-bar-primary-modules" style="position: fixed; top: auto;">
                                   <div class="util-bar-module util-bar-module-share">
                                         
-                                        <div class="util-bar-btn util-bar-btn-facebook util-bar-btn-share" data-module-name="utility-bar-module-share" data-module-section="share" data-uotrack="UtilityBarFacebookBtn">
+                                        <a class="util-bar-btn util-bar-btn-facebook util-bar-btn-share" data-module-name="utility-bar-module-share" data-module-section="share" data-uotrack="UtilityBarFacebookBtn" href="https://www.facebook.com/sharer.php?s=100&p[url]=http://indystar.com&p[title]={{events.events[0].title}}&p[summary]={{events.events[0].online_description}}">
                                                 <span class="util-bar-share-count util-bar-share-count-facebook"></span>
-                                        </div>
-                                        <a class="util-bar-btn util-bar-btn-twitter" data-module-name="share-twitter" data-popup-width="550" data-popup-height="450" data-uotrack="UtilityBarTwitterLink" href="https://twitter.com/intent/tweet?url=http://indystar.com&amp;text=&amp;via=indystar" target="_blank" data-popup=""></a>
+                                        </a>
+                                        <a class="util-bar-btn util-bar-btn-twitter" data-module-name="share-twitter" data-popup-width="550" data-popup-height="450" data-uotrack="UtilityBarTwitterLink" href="https://twitter.com/intent/tweet?url=http://indystar.com&text={{events.events[0].title}}&via=@indystar" target="_blank" data-popup=""></a>
 
-                                        <div class="util-bar-btn util-bar-btn-email" data-module-name="utility-bar-module-share" data-module-section="email" data-uotrack="UtilityBarEmailBtn">
-                                        </div>
+                                        <a class="util-bar-btn util-bar-btn-email" data-module-name="utility-bar-module-share" href="mailto:?subject=Check out this event on Indystar.com!&body={{events.events[0].title}}, {{events.events[0].online_description}}" data-module-section="email" data-uotrack="UtilityBarEmailBtn">
+                                        </a>
+                                        
                                         <div class="util-bar-flyout util-bar-flyout-share">
-                                            </div></div><div class="util-bar-module util-bar-module-comments"><div class="util-bar-btn util-bar-btn-comments" data-uotrack="UtilityBarCommentsBtn" data-module-name="utility-bar-module-comments"><span class="util-bar-comment-count">
-                           
-                                        </span>
-                                      </div>
+                                        </div>
+                                  </div>
+                                  <div class="util-bar-module util-bar-module-comments">
+                                    <div class="util-bar-btn util-bar-btn" data-uotrack="UtilityBarCommentsBtn" data-module-name="utility-bar-module"><img src="http://ec2-23-21-153-60.compute-1.amazonaws.com/digital/production/PlanetDiscover/icon.png">
+                                        <span class="util-bar-comment-count"></span>
+                          
                                   </div>
                               </div>
+                          </div>
 
 
-                              <div class="util-bar-secondary-modules"><div class="util-bar-module util-bar-module-print"></div></div></div></div>
+                          <div class="util-bar-secondary-modules">
+                            <div class="util-bar-module util-bar-module-print"></div>
+                          </div>
+                    </div>
+            </div>
 
                               <section id="module-position-M6VXJGU61co" class="storytopbar-bucket story-headline-module">
                                       <h1 itemprop="headline">{{events.events[0].title}}</h1></section><section id="module-position-M6VXJGVb07w" class="storytopbar-bucket story-byline-module"><div class="asset-metabar" itemprop="author" itemscope="" itemtype="http://schema.org/Person"><span itemprop="name" class="asset-metabar-author asset-metabar-item" style="font-size:18px;padding:2px 3px; color:#000;> </span>
@@ -51,24 +59,19 @@
 
                 <div id="module-position-M6VXJJ-0cxA" class="story-asset inline-share-tools-asset">
 
-                  <div class="inline-share-tools asset-inline-share-tools asset-inline-share-tools-top" style="clear:both; border-top:1px solid gray; padding-top:10px;">
+                  <div class="inline-share-tools asset-inline-share-tools asset-inline-share-tools-top" style="clear:both; border-top:1px solid gray; padding:10px 0 25px 0;">
                     <span class="inline-share-tools-label">SHARE</span>
                     <a class="inline-share-btn inline-share-btn-facebook" href="https://www.facebook.com/sharer.php?s=100&p[url]=http://indystar.com&p[title]={{events.events[0].title}}&p[summary]={{events.events[0].online_description}}" data-share-method="facebook" data-uotrack="InlineShareFacebookBtn"><span class="inline-share-count inline-share-count-facebook">
                             
                         </span>
                         <span class="inline-share-btn-label inline-share-btn-label-facebook">CONNECT</span></a>
                       </span>
-                        <a class="inline-share-btn inline-share-btn-twitter" data-share-method="twitter" data-uotrack="InlineShareTwitterLink" data-popup-width="550" data-popup-height="450" href="hhttps://twitter.com/intent/tweet?url=http://indystar.com&text={{events.events[0].title}}&via=@indystar" target="_blank" data-popup="">
+                        <a class="inline-share-btn inline-share-btn-twitter" data-share-method="twitter" data-uotrack="InlineShareTwitterLink" data-popup-width="550" data-popup-height="450" href="https://twitter.com/intent/tweet?url=http://indystar.com&text={{events.events[0].title}}&via=@indystar" target="_blank" data-popup="">
                             <span class="inline-share-count inline-share-count-twitter"></span>
                             <span class="inline-share-btn-label inline-share-btn-label-twitter">TWEET</span>
                         </a>  
-                          <span class="inline-share-btn inline-share-btn-comments" data-share-method="comments" data-uotrack="InlineShareCommentsBtn">
-                          <span class="inline-share-count inline-share-count-comments">
-                            
-                          </span>
-                          <span class="inline-share-btn-label inline-share-btn-label-comments">COMMENT</span>
-                          </span>
-                          <a class="inline-share-btn inline-share-btn-email" href="mailto:?subject=Check out this event on Indystar!&body={{events.events[0].title}}, {{"data-share-method="email" data-uotrack="InlineShareEmailBtn">
+                         
+                          <a class="inline-share-btn inline-share-btn-email" href="mailto:?subject=Check out this event on Indystar.com!&body={{events.events[0].title}}, {{events.events[0].online_description}}" data-share-method="email" data-uotrack="InlineShareEmailBtn">
                               <span class="inline-share-count inline-share-count-email"></span>
                               <span class="inline-share-btn-label inline-share-btn-label-email">EMAIL</span>
                          </a>
@@ -83,96 +86,108 @@
 
               <div class="calendar" style="float:right;"></div>             
                     <div id="singledetails" style="text-transform:uppercase; font-size:12px; color:#666;">
-                        <div class="featured-event-description" style="text-transform:none; font-size:14px; color:#000;">{{events.events[0].online_description}}
+                        <div class="featured-event-description" style="text-transform:none; font-size:14px; color:#000; padding-bottom:20px;">{{events.events[0].online_description}}
                         </div>
                         <h3>Details</h3>
-                          <div class="detailblocks" style="background-color:#eee; line-height:1.5;width:90%; height:240px; padding:20px; color:#000;">
+                          <div class="detailblocks" style="background-color:#eee; line-height:1.5;width:90%; margin-bottom:10px;height:240px; padding:20px; color:#000;">
                               <div id="detailblock-left" style="float:left; width:46%; padding-left:17px;border-right:1px solid gray;">{{events.events[0].span_start}}<br />
                               {{events.events[0].location}}<br /> {{events.events[0].listing.address}}
                               </div>
-                               <div id="detailblock-right" style="width:40%;float:right;">Phone: {{events.events[0].listing.phone}}<br /><a href="{{event.listing.display_url}}" style="font-weight:700;">{{events.events[0].listing.display_url}}</a><br />Cost: {{events.events[0].admission}}
+                               <div id="detailblock-right" style="width:40%;float:right;">Phone: {{events.events[0].listing.phone}}<br /><a href="{{event.listing.display_url}}" style="font-weight:700;">{{events.events[0].listing.display_url}}</a><br />Cost: {{events.events[0].pricing}}
                                </div> 
-                                   <div id="lineblocks" style="border-bottom:1px gray solid; width:90%; border-top: 1px gray solid; margin:20px; padding:5px; float:left;"> Hours: {{event.event[0].hours}}<br />
-                                    Ticket Link: {{event.event[0].ticket_url}}<br />
-                                    Payment Options: {{event.event[0].payment_options}}<br />
-                                    Alcohol: {{event.event[0].alcohol_available}}<br />
-                                    Parking: {{event.event[0].parking}}<br />
-                                    Children: {{event.event[0].ages}}<br />
-                                    Attire: {{event.event[0].attire}}</div>
+                                   <div id="lineblocks" style="border-bottom:1px gray solid; width:90%; border-top: 1px gray solid; margin:20px; padding:5px; float:left;"> Hours: {{events.events[0].hours}}<br />
+                                    Ticket Link: {{events.events[0].ticket_url}}<br />
+                                    Payment Options: {{events.events[0].payment_options}}<br />
+                                    Alcohol: {{events.events[0].alcohol}}<br />
+                                    Parking: {{events.events[0].parking}}<br />
+                                    Children: {{events.events[0].ages}}<br />
+                                    Attire: {{events.events[0].attire}}</div>
                              
+                                   </div>
                           </div>
-                     </div>
-                
+                    </div>     
                           
-                                 
-                                     
-                      </div>     
-                          
-                           
-                               
+                    <div id="module-position-M6VXJJ_mdUI" class="story-asset inline-share-tools-asset" style="clear:both;"><div class="inline-share-tools asset-inline-share-tools asset-inline-share-tools-bottom">
+                        <span class="inline-share-tools-label">SHARE</span>
 
-                        
-                    
-                        
+                          <a class="inline-share-btn inline-share-btn-facebook" data-share-method="facebook" href="https://www.facebook.com/sharer.php?s=100&p[url]=http://indystar.com&p[title]={{events.events[0].title}}&p[summary]={{events.events[0].online_description}}" data-uotrack="InlineShareFacebookBtn">
+                              <span class="inline-share-count inline-share-count-facebook"></span>
+                              
+                              <span class="inline-share-btn-label inline-share-btn-label-facebook">CONNECT</span>
+                          </a>
+                          <a class="inline-share-btn inline-share-btn-twitter" data-share-method="twitter" data-uotrack="InlineShareTwitterLink" data-popup-width="550" data-popup-height="450" href="https://twitter.com/intent/tweet?url=http://indystar.com&text={{events.events[0].title}}&via=@indystar" target="_blank" data-popup="">
+                              <span class="inline-share-count inline-share-count-twitter"></span>
+                              <span class="inline-share-btn-label inline-share-btn-label-twitter">TWEET</span>
+                          </a>  
+
            
-
-   
-
-
-
-    <div id="module-position-M6VXJJ_mdUI" class="story-asset inline-share-tools-asset" style="clear:both;"><div class="inline-share-tools asset-inline-share-tools asset-inline-share-tools-bottom"><span class="inline-share-tools-label">SHARE</span><span class="inline-share-btn inline-share-btn-facebook" data-share-method="facebook" data-uotrack="InlineShareFacebookBtn"><span class="inline-share-count inline-share-count-facebook">
             
-        </span><span class="inline-share-btn-label inline-share-btn-label-facebook">CONNECT</span></span><a class="inline-share-btn inline-share-btn-twitter" data-share-method="twitter" data-uotrack="InlineShareTwitterLink" data-popup-width="550" data-popup-height="450" href="https://twitter.com/intent/tweet?url=http://indy.st/1dsTPYm&amp;text=Tully:%20Gay%20marriage%20debate%E2%80%99s%20biggest%20problem?%20It%E2%80%99s%20just%20plain%20wrong&amp;via=indystar" target="_blank" data-popup=""><span class="inline-share-count inline-share-count-twitter"></span><span class="inline-share-btn-label inline-share-btn-label-twitter">TWEET</span></a><span class="inline-share-btn inline-share-btn-comments" data-share-method="comments" data-uotrack="InlineShareCommentsBtn"><span class="inline-share-count inline-share-count-comments">
-          
-        </span><span class="inline-share-btn-label inline-share-btn-label-comments">COMMENT</span></span><span class="inline-share-btn inline-share-btn-email" data-share-method="email" data-uotrack="InlineShareEmailBtn"><span class="inline-share-count inline-share-count-email"></span><span class="inline-share-btn-label inline-share-btn-label-email">EMAIL</span></span><span class="inline-share-btn inline-share-btn-more" data-share-method="facebook" data-uotrack="InlineShareMoreBtn"><span class="inline-share-count inline-share-count"><img src="http://ec2-23-21-153-60.compute-1.amazonaws.com/digital/production/PlanetDiscover/icon.png"></span><span class="inline-share-btn-label inline-share-btn-label-more">ADD</span></span></div></div></div><aside class="story-right-rail"><section id="module-position-M6VXJJ94XhQ" class="storyrightrail-bucket poster-ad-asset-module"><div class="partner-placement partner-asset-right-ad" id="ad-position-292" data-monetization-id="poster" data-monetization-sizes="mediumrectangle,halfpage,portrait,filmstrip" style="display: block; opacity: 1;"><div id="ad-slot-7103-in-indianapolis-C1532-poster-news-opinion-columnist_tully-308" class="ad-slot"><div id="google_ads_iframe_7103/in-indianapolis-C1532/poster/news/opinion/columnist_tully_4__container__" style="border: 0pt none;"><iframe id="google_ads_iframe_7103/in-indianapolis-C1532/poster/news/opinion/columnist_tully_4" name="google_ads_iframe_7103/in-indianapolis-C1532/poster/news/opinion/columnist_tully_4" width="300" height="250" scrolling="no" marginwidth="0" marginheight="0" frameborder="0" src="javascript:&quot;<html><body style='background:transparent'></body></html>&quot;" style="border: 0px; vertical-align: bottom;"></iframe></div><iframe id="google_ads_iframe_7103/in-indianapolis-C1532/poster/news/opinion/columnist_tully_4__hidden__" name="google_ads_iframe_7103/in-indianapolis-C1532/poster/news/opinion/columnist_tully_4__hidden__" width="0" height="0" scrolling="no" marginwidth="0" marginheight="0" frameborder="0" src="javascript:&quot;<html><body style='background:transparent'></body></html>&quot;" style="border: 0px; vertical-align: bottom; visibility: hidden; display: none;"></iframe></div></div></section>
- <div class="sidebar sidebar-home dark">
-                  <a href="#" class="close-sidebar sidebar-button hide">
-                    <div class="icon"></div>
-                  </a>
-                  <div class="sidebar-wrapper">
-                    <div class="sidebar-fixed-content" > 
-<!-- clean up this garbage -->
-                    
-                    <section id="module-position-17" class="card-sidebar sidebar-poster-ad-module sidebar-poster-ad-sidebar">
-                      <div class="partner-placement partner-sidebar-ad" id="ad-position-50" data-monetization-id="poster_front" data-monetization-sizes="mediumrectangle,halfpage" style="display: block;">
-                        <div id="ad-slot-7103-in-indianapolis-C1532-poster_front-homepage-52" class="ad-slot">
-                          <div style="height:250px; width:300px; background-color:white;">
-                            <center><h1>AD</h1></center>
-                          </div>
-                        </div>
-                      </div>
-                    </section>                     
-                    </div>
-                    <div class="sidebar-scrollable-window">
-                      <section id="module-position-10" class="card-sidebar livefeed-module livefeed-sidebar">
-                              <div class="sidebar-title-wrapper" style-"display:none;">
-                                <h6 class="sidebar-title livefeed-sidebar-title opinion">Best Bets</h6>
-                              </div>
-                                  
-                                  <div class="sidebar-content livefeed-sidebar-content opinion" ng-controller="BestbetssidebarCtrl" ng-cloak>
-                                    <ul class="livefeed-news-list opinion live-feed-wide" >
-                                      <li class="live-feed-news-item opinion has-image" ng-repeat="event in events">
-                                        <a href="#" class="livefeed-news-item-link livefeed-li-first">
-                                          <div class="live-feed-thumb">
-                                            <img src="" class="live-feed-thumb-img">
-                                          </div>
-                                          <div class="live-feed-layout" style="float:right;">
-                                            <p class="live-feed-time-since">
-                                              <span class="live-feed-humanized live-feed-timesince-span opinion">Time</span>
-                                            </p>
-                                          </div>
-                                          <p class="live-feed-headline article" style="width:200px; padding-top:0px;">{{event.title}}</p>
-                                          <p class="live-feed-headline-event-details" style="max-width:201px; float:left; font-size:12px;">{{event.occurrences[0].startdatetime}}<br />can't find attribute for locaiton</p>
-                                          <div class="clearfix-1440"></div>
-                                        </a>
-                                      </li>
-                                    </ul>
-                                  </div>
-                                </section>
+                          <a class="inline-share-btn inline-share-btn-email" href="mailto:?subject=Check out this event on Indystar.com!&body={{events.events[0].title}}, {{events.events[0].online_description}}" data-share-method="email" data-uotrack="InlineShareEmailBtn">
+                                    <span class="inline-share-count inline-share-count-email"></span>
+                                    <span class="inline-share-btn-label inline-share-btn-label-email">EMAIL</span>
+                          </a>
 
-
-
+                          <span class="inline-share-btn inline-share-btn-more" data-share-method="facebook" data-uotrack="InlineShareMoreBtn">
+                            <span class="inline-share-count inline-share-count">
+                              <img src="http://ec2-23-21-153-60.compute-1.amazonaws.com/digital/production/PlanetDiscover/icon.png">
+                            </span>
+                            <span class="inline-share-btn-label inline-share-btn-label-more">ADD</span>
+                          </span>
                     </div>
                   </div>
                 </div>
-              </div>
+                <aside class="story-right-rail">
+                  <section id="module-position-M6VXJJ94XhQ" class="storyrightrail-bucket poster-ad-asset-module">
+                    <div class="partner-placement partner-asset-right-ad" id="ad-position-292" data-monetization-id="poster" data-monetization-sizes="mediumrectangle,halfpage,portrait,filmstrip" style="display: block; opacity: 1;">
+                      <div id="ad-slot-7103-in-indianapolis-C1532" class="ad-slot">
+                        </div>
+                  </section>
+                 <div class="sidebar sidebar-home dark">
+                     <a href="#" class="close-sidebar sidebar-button hide">
+                        <div class="icon"></div>
+                        </a>
+                            <div class="sidebar-wrapper">
+                              <div class="sidebar-fixed-content" > 
+<!-- clean up this garbage -->
+                    
+                                      <section id="module-position-17" class="card-sidebar sidebar-poster-ad-module sidebar-poster-ad-sidebar">
+                                        <div class="partner-placement partner-sidebar-ad" id="ad-position-50" data-monetization-id="poster_front" data-monetization-sizes="     mediumrectangle,halfpage" style="display: block;">
+                                          <div id="ad-slot-7103-in-indianapolis-C1532-poster_front-homepage-52" class="ad-slot">
+                                            <div style="height:250px; width:300px; background-color:white;">
+                                                <center><h1>AD</h1></center>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </section>                     
+                                  </div>
+                                <div class="sidebar-scrollable-window">
+                                       <section id="module-position-10" class="card-sidebar livefeed-module livefeed-sidebar">
+                                          <div class="sidebar-title-wrapper" style-"display:none;">
+                                            <h6 class="sidebar-title livefeed-sidebar-title opinion">Best Bets</h6>
+                                          </div>
+                                      
+                                          <div class="sidebar-content livefeed-sidebar-content opinion" ng-controller="BestbetssidebarCtrl" ng-cloak>
+                                              <ul class="livefeed-news-list opinion live-feed-wide" >
+                                                  <li class="live-feed-news-item opinion has-image" ng-repeat="event in events">
+                                                    <a href="#" class="livefeed-news-item-link livefeed-li-first">
+                                                      <div class="live-feed-thumb">
+                                                          <img src="" class="live-feed-thumb-img">
+                                                      </div>
+                                                      <div class="live-feed-layout" style="float:right;">
+                                                          <p class="live-feed-time-since">
+                                                              <span class="live-feed-humanized live-feed-timesince-span opinion">Time</span>
+                                                          </p>
+                                                      </div>
+                                                          <p class="live-feed-headline article" style="width:200px; padding-top:0px;">{{event.title}}</p>
+                                                          <p class="live-feed-headline-event-details" style="max-width:201px; float:left; font-size:12px;">{{event.occurrences[0].startdatetime}}<br />can't find attribute for locaiton</p>
+                                                          <div class="clearfix-1440"></div>
+                                                    </a>
+                                                  </li>
+                                              </ul>
+                                          </div>
+                                      </section>
+
+                                </div>
+                            </div>
+                        </div>
+                  </div>
