@@ -19,6 +19,18 @@
     <link rel="stylesheet" href="http://www.gannett-cdn.com/indystar/static/css/print.css" media="print">
     <link rel="stylesheet" href="http://www.gannett-cdn.com/indystar/static/css/bundles/main_modern.min.css">
 
+<style>
+#map-canvasContainer{
+    height: 300px;
+    width: 320px;
+    position: relative;
+    padding: 10px;
+}
+
+#map-canvas{ height: 100% }
+
+</style>
+
     <!-- endbuild -->
   </head>
   <body class=" site-theme-dark-blue expanded-footer" >
@@ -259,8 +271,9 @@
                       </div>
                     </section>                     
                     </div>
+                    
                     <div class="sidebar-scrollable-window">
-                      <section id="module-position-10" class="card-sidebar livefeed-module livefeed-sidebar">
+                          <section id="module-position-10" class="card-sidebar livefeed-module livefeed-sidebar">
 
                                   <div class="sidebar-title-wrapper" style="display:none;">
                                          <h6 class="sidebar-title livefeed-sidebar-title opinion">Best Bets</h6>
@@ -283,9 +296,11 @@
                                         </a>
                                       </li>
                                     </ul>
-                                  </div>
-                                </section>
-
+                                   </div>
+                         </section>
+                    <div id="map-canvasContainer">
+                        <div id="map-canvas"></div>
+                    </div>
 
 
                     </div>
@@ -322,6 +337,71 @@
        ga('create', 'UA-XXXXX-X');
        ga('send', 'pageview');
     </script>
+<!---map code--->
+
+ <!-- map code -->
+ 
+ <script >
+
+function breakItUp(rec){
+            return rec.split(' ').join('+');
+    }
+
+// Enable the visual refresh
+google.maps.visualRefresh = true;
+var map;
+
+function initialize() {
+    var canvas = document.getElementById("map-canvas");
+
+    var listing = PlanetDiscoverAPI.lastEventsSearchResults.indexedEvents[currentEventId].listing;
+    var geo = {
+        lat: listing.latitude,
+        lon: listing.longitude
+    } || null;
+
+    if( geo === null){
+        var queryString = "http://search.indystar.com/scripts/mapping/map_js.jsp?";
+        var addressOne = breakItUp(listing.address) || "" ;
+        var addressTwo = breakItUp(listing.address2) || "";
+        var city = breakItUp(listing.city) || "";
+        var state = listing.state;
+        var zip = parseInt(listing.zip);
+
+
+//backup address validation if no lat/lon are provided
+       var geo = new google.maps.Geocoder();
+       geo.geocode( {'address': addressOne + ' ' + addressTwo + ' ' + city + ' ' + state + ' ' + zip}, function(results, status){
+            if (status == google.maps.GeocoderStatus.OK){
+                console.log(results);
+                geo = {
+                    lat: results.geometry.location.ob,
+                    lon: results.geometry.location.pb
+                };
+            }
+        });
+    }
+
+    var mapOptions = {
+        zoom: 14,
+        center: new google.maps.LatLng(geo.lat, geo.lon)
+    };
+    map = new google.maps.Map(canvas,
+          mapOptions);  
+
+    marker = new google.maps.Marker( {
+                map:map,
+                draggable:false,
+                animation: google.maps.Animation.DROP,
+                position: new google.maps.LatLng(geo.lat, geo.lon)
+              } );
+    track();
+};
+
+</script>
+
+<!---end map code--->
+
 
     <!--[if lt IE 9]>
     <script src="bower_components/es5-shim/es5-shim.js"></script>
