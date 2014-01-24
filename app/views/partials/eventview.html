@@ -101,15 +101,21 @@
                               <div id="detailblock-left" style="float:left; text-transform:none; width:46%; padding-left:17px;border-right:1px solid gray;">{{events.events[0].span_start}}<br />
                               {{events.events[0].location}}<br /> {{events.events[0].listing.address}}<br />{{events.events[0].listing.city}}
                               </div>
-                               <div id="detailblock-right" style="width:46%;float:right;">Phone: {{events.events[0].listing.phone}}<br /><a href="{{event.listing.display_url}}" style="font-weight:700;">{{events.events[0].listing.display_url}}</a><br />Cost: {{events.events[0].pricing}}
+                               <div id="detailblock-right" style="width:46%;float:right;">Phone: {{events.events[0].listing.phone}}<br /><a href="{{event.listing.display_url}}" style="font-weight:700;">{{events.events[0].listing.display_url}}</a><br />
+                                
+                                <span ng-show="events.events[0].price != ''" class="cost">Cost: {{events.events[0].price}}</span>
                                </div> 
-                                   <div id="lineblocks" style="border-bottom:1px gray solid; width:90%; border-top: 1px gray solid; margin:17px; padding:5px 0 5px; float:left;"> Hours: {{events.events[0].hours}}<br />
-                                    Ticket Link: {{events.events[0].ticket_url}}<br />
-                                    Payment Options: {{events.events[0].payment_options}}<br />
-                                    Alcohol: {{events.events[0].listing.alcohol}}<br />
-                                    Parking: {{events.events[0].parking}}<br />
-                                    Children: {{events.events[0].ages}}<br />
-                                    Attire: {{events.events[0].attire}}</div>
+                                   <div id="lineblocks" style="border-bottom:1px gray solid; width:90%; border-top: 1px gray solid; margin:17px; padding:5px 0 5px; float:left;"> 
+                                     <span ng-show="events.events[1].attributes[33].reservation != ''">Reservations: {{events.events[1].attributes[33].reservation}}</span><br />
+                                     <span ng-hide="events.events[1].attributes[33].takeout === ''">Takeout: {{events.events[1].attributes[33].takeout}}</span><br />
+                                    <span ng-show="events.events[1].attributes[33].hours != ''">{{events.events[1].attributes[33].hours}}</span><br />
+                                    <span ng-show="events.events[1].ticket_url != ''">Ticket Link: {{events.events[1].ticket_url}}</span><br />
+                                    <span ng-show="events.events[1].attribues[33].payment != ''">Payment Options: {{events.events[1].attributes[33].payment}}</span><br />
+                                    
+                                    <span ng-show="events.events[1].attributes[33].alcohol_available != ''" class="alcohol">Alcohol: {{events.events[1].attributes[33].alcohol_available}}</span><br />
+                                    <span ng-show="events.events[1].attributes[33].parking != ''">Parking: {{events.events[1].attributes[33].parking}}</span><br />
+                                    <span ng-show="events.events[0].kid-friendly != ''">Children: {{events.events[0].kid-friendly}}</span><br />
+                                    <span ng-show="events.events[0].attire != ''">Attire: {{events.events[0].attire}}</span></div>
                              
                                    </div>
                           </div>
@@ -185,7 +191,7 @@
                                                           </p>
                                                       </div>
                                                           <p class="live-feed-headline article" style="width:200px; padding-top:0px;">{{event.title}}</p>
-                                                          <p class="live-feed-headline-event-details" style="max-width:201px; float:left; font-size:12px;">{{event.occurrences[0].startdatetime}}<br />can't find attribute for locaiton</p>
+                                                          <p class="live-feed-headline-event-details" style="max-width:201px; float:left; font-size:12px;">{{event.occurrences[0].startdatetime}}<br />{{events.events[0].location}}</p>
                                                           <div class="clearfix-1440"></div>
                                                     </a>
                                                   </li>

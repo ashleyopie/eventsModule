@@ -8,3 +8,7 @@ angular.module('eventsAppApp')
       'Karma'
     ];
   });
+
+function Ctrl2($scope) {
+  $scope.format = 'M/d/yy h:mm:ss a';
+}
