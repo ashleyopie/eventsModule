@@ -1,7 +1,7 @@
-     <div id="overlay" style="">
+ <div id="overlay" style="">
             <div class="transition-wrap">
                 <article class="asset  clearfix" style="min-height: 443px;">
-                      <div class="close-wrap" style="position: fixed; margin-top: -80px;">
+                      <div class="close-wrap" style="position: fixed;">
                             <a href="#/" class="close close-overlay" data-ht="modalclose"></a>
                        </div>
                        
@@ -10,10 +10,11 @@
                               <div class="util-bar-primary-modules" style="position: fixed; top: auto;">
                                   <div class="util-bar-module util-bar-module-share">
                                         
-                                        <a class="util-bar-btn util-bar-btn-facebook util-bar-btn-share" data-module-name="utility-bar-module-share" data-module-section="share" data-uotrack="UtilityBarFacebookBtn" href="https://www.facebook.com/sharer.php?s=100&p[url]=http://indystar.com&p[title]={{events.events[0].title}}&p[summary]={{events.events[0].online_description}}">
+                                        <a class="util-bar-btn util-bar-btn-facebook util-bar-btn-share" data-module-name="utility-bar-module-share" data-module-section="share" data-uotrack="UtilityBarFacebookBtn" href="https://www.facebook.com/sharer.php?s=100&p[url]=http://indystar.com&p[title]={{events.events[0].title}}&p[summary]={{events.events[0].online_description}}" onclick="window.open(this.href, 'mywin',
+'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;">
                                                 <span class="util-bar-share-count util-bar-share-count-facebook"></span>
                                         </a>
-                                        <a class="util-bar-btn util-bar-btn-twitter" data-module-name="share-twitter" data-popup-width="550" data-popup-height="450" data-uotrack="UtilityBarTwitterLink" href="https://twitter.com/intent/tweet?url=http://indystar.com&text={{events.events[0].title}}&via=@indystar" target="_blank" data-popup=""></a>
+                                        <a class="util-bar-btn util-bar-btn-twitter" data-module-name="share-twitter"  data-pdata-uotrack="UtilityBarTwitterLink" href="https://twitter.com/intent/tweet?url=http://indystar.com&text={{events.events[0].title}}&via=indystar" target="_blank" data-popup=""></a>
 
                                         <a class="util-bar-btn util-bar-btn-email" data-module-name="utility-bar-module-share" href="mailto:?subject=Check out this event on Indystar.com!&body={{events.events[0].title}}, {{events.events[0].online_description}}" data-module-section="email" data-uotrack="UtilityBarEmailBtn">
                                         </a>
@@ -69,12 +70,14 @@
 
                   <div class="inline-share-tools asset-inline-share-tools asset-inline-share-tools-top" style="clear:both; border-top:1px solid gray; padding:10px 0 25px 0;">
                     <span class="inline-share-tools-label">SHARE</span>
-                    <a class="inline-share-btn inline-share-btn-facebook" href="https://www.facebook.com/sharer.php?s=100&p[url]=http://indystar.com&p[title]={{events.events[0].title}}&p[summary]={{events.events[0].online_description}}" data-share-method="facebook" data-uotrack="InlineShareFacebookBtn"><span class="inline-share-count inline-share-count-facebook">
+                    <a class="inline-share-btn inline-share-btn-facebook" href="https://www.facebook.com/sharer.php?s=100&p[url]=http://indystar.com&p[title]={{events.events[0].title}}&p[summary]={{events.events[0].online_description}}" onclick="window.open(this.href, 'mywin',
+'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" data-share-method="facebook" data-uotrack="InlineShareFacebookBtn"><span class="inline-share-count inline-share-count-facebook">
                             
                         </span>
                         <span class="inline-share-btn-label inline-share-btn-label-facebook">CONNECT</span></a>
                       </span>
-                        <a class="inline-share-btn inline-share-btn-twitter" data-share-method="twitter" data-uotrack="InlineShareTwitterLink" data-popup-width="550" data-popup-height="450" href="https://twitter.com/intent/tweet?url=http://indystar.com&text={{events.events[0].title}}&via=@indystar" target="_blank" data-popup="">
+                        <a class="inline-share-btn inline-share-btn-twitter" data-share-method="twitter" data-uotrack="InlineShareTwitterLink" href="https://twitter.com/intent/tweet?url=http://indystar.com&text={{events.events[0].title}}&via=indystar" target="_blank" onclick="window.open(this.href, 'mywin',
+'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" >
                             <span class="inline-share-count inline-share-count-twitter"></span>
                             <span class="inline-share-btn-label inline-share-btn-label-twitter">TWEET</span>
                         </a>  
@@ -96,16 +99,16 @@
                     <div id="singledetails" style="text-transform:uppercase; font-size:12px; color:#666; height:auto;">
                         <div class="featured-event-description" style="text-transform:none; font-size:14px; color:#000; padding-bottom:20px;">{{events.events[0].online_description}}
                         </div>
-                        <h3>Details</h3>
+                        <h3 class="inline-share-tools-label" style="color:black; margin-bottom:20px;">Details</h3>
 
-                          <div class="detailblocks" style="background-color:#eee; line-height:1.5;width:90%; margin-bottom:10px;height:240px; padding:20px; color:#000;">
+                          <div class="detailblocks" style="line-height:1.5;width:90%; margin-bottom:10px;min-height:110px; padding:8px 20px 5px 0px; color:#000;">
                         
 
 
 
-            
-                              <div id="detailblock-left" style="float:left; font-size: 14px;text-transform:none; width:46%; padding-left:17px;border-right:1px solid gray;">{{events.events[0].span_start}}
-                                     
+
+                              <div id="detailblock-left" style="float:left; font-size: 14px;text-transform:none; width:46%; padding:0 0 0 17px;border-right:1px dotted gray;">{{events.events[0].span_start}}
+                                     
 
                                 <br />
                               {{events.events[0].location}}<br /> {{events.events[0].listing.address}}<br />{{events.events[0].listing.city}}, {{events.events[0].listing.zip}}
@@ -114,10 +117,11 @@
                                 
                                
                                </div> 
-                                   <div id="lineblocks" style="border-bottom:1px gray solid; text-transform:none; font-size: 14px;width:90%; border-top: 1px gray solid; margin:17px; color:#000; padding:5px 0 5px; float:left;">
-                                     <span ng-repeat='item in events.events[0].attributes | filter:{public_display:true} | filter:!{value:""}' style="margin-left:-53px;">
-                                    {{item.name}}:  {{item.value}}<br /></span>
-                                     
+                                   <div class="lineblocks" style="border-bottom:1px gray dotted; text-transform:none; font-size: 14px;width:98%; border-top: 1px gray dotted;height:auto;color:#000; margin:10px 0 22px 0;padding:5px 12px 5px 17px; float:left;">
+                                     <span ng-repeat='item in events.events[0].attributes | filter:{public_display:true} | filter:!{value:""}' >
+                                    {{item.name}}:  {{item.value}}<br /></span>
+                                     <!--{{events.events[0].price}}<br />
+                                     {{events.events[1].attributes[33].alcohol}}-->
                                     
                                     </div>
                              
@@ -128,12 +132,14 @@
                     <div id="module-position-M6VXJJ_mdUI" class="story-asset inline-share-tools-asset" style="clear:both;"><div class="inline-share-tools asset-inline-share-tools asset-inline-share-tools-bottom">
                         <span class="inline-share-tools-label">SHARE</span>
 
-                          <a class="inline-share-btn inline-share-btn-facebook" data-share-method="facebook" href="https://www.facebook.com/sharer.php?s=100&p[url]=http://indystar.com&p[title]={{events.events[0].title}}&p[summary]={{events.events[0].online_description}}" data-uotrack="InlineShareFacebookBtn">
+                          <a class="inline-share-btn inline-share-btn-facebook" data-share-method="facebook" href="https://www.facebook.com/sharer.php?s=100&p[url]=http://indystar.com&p[title]={{events.events[0].title}}&p[summary]={{events.events[0].online_description}}" onclick="window.open(this.href, 'mywin',
+'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" data-uotrack="InlineShareFacebookBtn">
                               <span class="inline-share-count inline-share-count-facebook"></span>
                               
                               <span class="inline-share-btn-label inline-share-btn-label-facebook">CONNECT</span>
                           </a>
-                          <a class="inline-share-btn inline-share-btn-twitter" data-share-method="twitter" data-uotrack="InlineShareTwitterLink" data-popup-width="550" data-popup-height="450" href="https://twitter.com/intent/tweet?url=http://indystar.com&text={{events.events[0].title}}&via=@indystar" target="_blank" data-popup="">
+                          <a class="inline-share-btn inline-share-btn-twitter" data-share-method="twitter" data-uotrack="InlineShareTwitterLink"  href="https://twitter.com/intent/tweet?url=http://indystar.com&text={{events.events[0].title}}&via=indystar" target="_blank" onclick="window.open(this.href, 'mywin',
+'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;">
                               <span class="inline-share-count inline-share-count-twitter"></span>
                               <span class="inline-share-btn-label inline-share-btn-label-twitter">TWEET</span>
                           </a>  
