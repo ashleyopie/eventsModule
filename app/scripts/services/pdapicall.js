@@ -31,34 +31,40 @@ angular.module('eventsAppApp')
 
         //CORS support
         //delete $http.defaults.headers.common['X-Requested-With'];
+        var tempElistStore = null;
+        var tempBlistStore = null;
 
         var runEventRequest = function() {
-            return $http({
+            if (tempElistStore === null) {
+                tempElistStore = $http({
 
-                method: 'POST',
-                url: pdUrl +
-                    '&api_key=' + api_key +
-                    '&sd=' + today +
-                    '&ed=' + futureDate +
-                    '&limit=' + 15 +
-                    '&sort=' + 'startDate'
-            });
+                    method: 'POST',
+                    url: pdUrl +
+                        '&api_key=' + api_key +
+                        '&sd=' + today +
+                        '&ed=' + futureDate +
+                        '&limit=' + 15 +
+                        '&sort=' + 'startDate'
+                });
+            }
+            return tempElistStore;
+
         };
 
         var getBestBets = function() {
-            return $http({
+            if (tempBlistStore === null) {
+                tempBlistStore = $http({
 
-                method: 'POST',
-                url: pdUrl +
-                    '&api_key=' + api_key +
-                    '&sd=' + today +
-                    '&sort=' + 'startDate' +
-                    '&attribFilter=' + '(attr_best_bet=yes)' +
-                    '&limit=' + 3
-
-
-
-            });
+                    method: 'POST',
+                    url: pdUrl +
+                        '&api_key=' + api_key +
+                        '&sd=' + today +
+                        '&sort=' + 'startDate' +
+                        '&attribFilter=' + '(attr_best_bet=yes)' +
+                        '&limit=' + 3
+                });
+            }
+            return tempBlistStore;
         };
 
         return {

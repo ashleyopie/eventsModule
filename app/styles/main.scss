@@ -4,12 +4,6 @@
     color: #000;
     padding: 0.2em 0;
 }
-#map-canvasContainer{
-    height: 300px;
-    width: 320px;
-    position: relative;
-    padding: 10px;
+.overlay{
+	position:absolute !important;
 }
-
-#map-canvas{ height: 100% }
-

@@ -4,12 +4,13 @@ angular.module('eventsAppApp', [
     'ngCookies',
     'ngResource',
     'ngSanitize',
-    'ngRoute'
+    'ngRoute',
+    'ui.bootstrap'
 ])
     .config(function($routeProvider, $locationProvider) {
         $routeProvider
             .when('/', {
-                templateUrl: 'views/main',
+                templateUrl: 'views/main.html',
                 controller: 'MainCtrl'
             })
             .when('/events/:eventId', {
