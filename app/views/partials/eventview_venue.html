@@ -39,14 +39,13 @@
             </div>
 
                               <section id="module-position-M6VXJGU61co" class="storytopbar-bucket story-headline-module">
-                                      <h1 itemprop="headline" style="width:52%;">{{events.events[0].title}}</h1>
-                                      <div class="dineicon" style="float:right; width:46%; margin-top:-41px;"><img src="http://ec2-23-21-153-60.compute-1.amazonaws.com/digital/production/PlanetDiscover/diningicon.png"></div>
+                                      <h1 itemprop="headline" style="width:59%;">{{events.events[0].title}}</h1>
                               </section>
                               <section id="module-position-M6VXJGVb07w" class="storytopbar-bucket story-byline-module">
-                                  <div class="asset-metabar" style="width:42%; border-radius:0; " itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+                                  <div class="asset-metabar" style="width:57%" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
                                     
            
-                                    <span class="asset-metabar-time asset-metabar-item nobyline" style="font-size:18px; color:#000; font-weight:700;padding:2px 3px;width:100%; line-height:1.2;">Cuisine | Neighbhorhood{{events.events[0].neighborhood}}
+                                    <span class="asset-metabar-time asset-metabar-item nobyline" style="font-size:18px; color:#000; font-weight:700;padding:2px 3px;width:100%; line-height:1.2;">Neighbhorhood{{events.events[0].neighborhoods}}
                                     </span>
                                   </div>
                               </section>
@@ -60,7 +59,7 @@
 
                                             <div class="image-wrap" style="width:534px; height:401px;">
                                                 <div class="ribbon-wrapper-blue">
-                                                    <div class="ribbon-blue">DINING</div>
+                                                    <div class="ribbon-blue">VENUE</div>
                                                     </div>
                                                    <img class="expand-img-horiz" itemprop="contentURL" src="http://lorempixel.com/534/401/" alt="">
                                                       <meta itemprop="name" content="-">
@@ -116,7 +115,7 @@
                                                   <div class="icon" style="float: left; width: 30px; height: 75px;"> <i class="fa fa-map-marker fa-3x"></i></div>
                                                       <div class="address">
 
-                                                          <div class="attrib" style="text-transform:none;"><a href="http://{{event.listing.display_url}}">{{events.events[0].location}}</a><br />{{events.events[0].listing.address}}<br /> {{events.events[0].listing.city}}, {{events.events[0].listing.zip}}<br /> 
+                                                          <div class="attrib" style="text-transform:none;">{{events.events[0].location}}<br />{{events.events[0].listing.address}}<br /> {{events.events[0].listing.city}}, {{events.events[0].listing.zip}}<br /> 
                                                              <h3 class="inline-share-tools-label" style="text-transform:uppercase;color:black; padding: 0 5px 0; width:auto;margin-bottom:20px;">Get Directions</h3>
                                                           </div>
                                                       </div>
@@ -128,22 +127,14 @@
 
                                                       <div class="icon"> <i class="fa fa-globe fa-2x"></i></div>  
                                                       <div class="website" style="float:left;">
-                                                        <a href="http://{{event.listing.display_url}}" style="font-weight:700;">{{events.events[0].listing.display_url}}</a>
+                                                        <a href="{{event.listing.display_url}}" style="font-weight:700;">{{events.events[0].listing.display_url}}</a>
                                                       </div>
 
-                                                      <div class="icon" style="clear:both;padding-top:19px;"> <i class="fa fa-building-o fa-2x"></i>
-                                                      </div>  
-                                                      <div class="cost" style="float:left; font-weight:bold;width:280px;padding-top:20px;">
-                                                       <a href="#">View Menu </a><br />
-                                                       
-                                                     </div>
-                                                      <div class="icon" style="clear:both;padding-top:19px;"> <i class="fa fa-pencil fa-2x"></i>
+                                                      <div class="icon" style="clear:both;padding-top:19px;"> <i class="fa fa-dollar fa-2x"></i>
                                                       </div>  
                                                       <div class="cost" style="float:left; width:280px;padding-top:20px;">
-                                                    
-                                                       Reservations:
+                                                       Ticket Link: {{events.events[0].price}}
                                                      </div>
-
 
                                                   </div>
                                            </div>
@@ -173,40 +164,11 @@
 
                                                   <div class="moreattrib" style="display:none;text-transform:none;margin:10px 0 0 -10px;">
                                                  
-                                                 <div class="icon"> <i class="fa fa-clock-o fa-2x"></i></div>  
-                                                      <div class="hours" style="height:50px; padding-top:5px;margin-left:-5px;">
+                                                      Parking:  {{events.events[0].parking}}<br/>
                                                       Hours: <br />
-                                                          
-                                                      </div>
-
-                                                       <div class="icon"> <i class="fa fa-usd fa-2x"></i></div>  
-                                                      <div class="hours" style="height:50px; padding-top:5px;">
-                                                      Price Range:  <br />
-                                                          
-                                                      </div>
-                                                       <div class="icon"> <i class="fa fa-dashboard fa-2x"></i></div>  
-                                                      <div class="hours" style="height:50px; padding-top:5px;margin-left:-5px;">
-                                                      Parking: <br />
-                                                          
-                                                      </div>
-                                                       <div class="icon"> <i class="fa fa-credit-card fa-2x"></i></div>  
-                                                      <div class="hours" style="height:50px; padding-top:5px;margin-left:-5px;">
-                                                      Payment Options:<br />
-                                                          
-                                                      </div>
-                                                      
-                                                       <div class="icon"> <i class="fa fa-glass fa-2x"></i></div>  
-                                                      <div class="hours" style="height:50px; padding-top:5px;margin-left:-5px;">
-                                                      Alcohol: <br /></div>
-                                                          
-                                                      <div class="icon"> <i class="fa fa-users fa-2x"></i></div>  
-                                                      <div class="hours" style="height:50px; padding-top:5px;margin-left:-5px;">
-                                                      Kid Friendly:<br /></div>
-                                                          
-                                                      
-                                                     
-                                                  
-
+                                                      Payment Options: 
+                                                      Alcohol:<br/>
+                                                      Kid Friendly:<br />
 
 
                                      </div>

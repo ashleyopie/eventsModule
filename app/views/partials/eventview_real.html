@@ -39,14 +39,13 @@
             </div>
 
                               <section id="module-position-M6VXJGU61co" class="storytopbar-bucket story-headline-module">
-                                      <h1 itemprop="headline" style="width:52%;">{{events.events[0].title}}</h1>
-                                      <div class="dineicon" style="float:right; width:46%; margin-top:-41px;"><img src="http://ec2-23-21-153-60.compute-1.amazonaws.com/digital/production/PlanetDiscover/diningicon.png"></div>
+                                      <h1 itemprop="headline" style="width:59%;">{{events.events[0].title}}</h1>
                               </section>
                               <section id="module-position-M6VXJGVb07w" class="storytopbar-bucket story-byline-module">
-                                  <div class="asset-metabar" style="width:42%; border-radius:0; " itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+                                  <div class="asset-metabar" style="width:57%" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
                                     
            
-                                    <span class="asset-metabar-time asset-metabar-item nobyline" style="font-size:18px; color:#000; font-weight:700;padding:2px 3px;width:100%; line-height:1.2;">Cuisine | Neighbhorhood{{events.events[0].neighborhood}}
+                                    <span class="asset-metabar-time asset-metabar-item nobyline" style="font-size:18px; color:#000; font-weight:700;padding:2px 3px;width:100%; line-height:1.2;">{{events.events[0].span_start}} | {{events.events[0].location}}
                                     </span>
                                   </div>
                               </section>
@@ -60,7 +59,7 @@
 
                                             <div class="image-wrap" style="width:534px; height:401px;">
                                                 <div class="ribbon-wrapper-blue">
-                                                    <div class="ribbon-blue">DINING</div>
+                                                    <div class="ribbon-blue">BEST BET</div>
                                                     </div>
                                                    <img class="expand-img-horiz" itemprop="contentURL" src="http://lorempixel.com/534/401/" alt="">
                                                       <meta itemprop="name" content="-">
@@ -110,13 +109,18 @@
                              
 
                                     <div class="detailblocks" style="line-height:1.5;width:90%; margin-bottom:10px;min-height:110px; padding:8px 20px 5px 0px; color:#000;">
-                                          
-                                                    
+                                          <div class="icon" style="float: left; width: 30px;"> <i class="fa fa-calendar fa-2x"></i></div>
+                                                <div class="time" style="height:43px;">
+
+                                                    <div class="attrib" style="text-transform:none;">{{events.events[0].span_start}}
+                                                           
+                                                    </div>
+                                                 </div>
                                            
                                                   <div class="icon" style="float: left; width: 30px; height: 75px;"> <i class="fa fa-map-marker fa-3x"></i></div>
                                                       <div class="address">
 
-                                                          <div class="attrib" style="text-transform:none;"><a href="http://{{event.listing.display_url}}">{{events.events[0].location}}</a><br />{{events.events[0].listing.address}}<br /> {{events.events[0].listing.city}}, {{events.events[0].listing.zip}}<br /> 
+                                                          <div class="attrib" style="text-transform:none;">{{events.events[0].location}}<br />{{events.events[0].listing.address}}<br /> {{events.events[0].listing.city}}, {{events.events[0].listing.zip}}<br /> 
                                                              <h3 class="inline-share-tools-label" style="text-transform:uppercase;color:black; padding: 0 5px 0; width:auto;margin-bottom:20px;">Get Directions</h3>
                                                           </div>
                                                       </div>
@@ -128,22 +132,14 @@
 
                                                       <div class="icon"> <i class="fa fa-globe fa-2x"></i></div>  
                                                       <div class="website" style="float:left;">
-                                                        <a href="http://{{event.listing.display_url}}" style="font-weight:700;">{{events.events[0].listing.display_url}}</a>
+                                                        <a href="{{event.listing.display_url}}" style="font-weight:700;">{{events.events[0].listing.display_url}}</a>
                                                       </div>
 
-                                                      <div class="icon" style="clear:both;padding-top:19px;"> <i class="fa fa-building-o fa-2x"></i>
+                                                      <div class="icon" style="clear:both;padding-top:19px;"> <i class="fa fa-dollar fa-2x"></i>
                                                       </div>  
-                                                      <div class="cost" style="float:left; font-weight:bold;width:280px;padding-top:20px;">
-                                                       <a href="#">View Menu </a><br />
-                                                       
+                                                      <div class="cost" style="float:left; width:280px;padding-top:15px;">
+                                                       Cost: {{events.events[0].price}}
                                                      </div>
-                                                      <div class="icon" style="clear:both;padding-top:19px;"> <i class="fa fa-pencil fa-2x"></i>
-                                                      </div>  
-                                                      <div class="cost" style="float:left; width:280px;padding-top:20px;">
-                                                    
-                                                       Reservations:
-                                                     </div>
-
 
                                                   </div>
                                            </div>
@@ -167,56 +163,52 @@
                                                                               </script>
                                      <div class="lineblocks" style="border-bottom:1px gray dotted; text-transform:none; font-size: 14px;width:98%; border-top: 1px gray dotted;height:auto;color:#000; margin:10px 0 22px 0;padding:5px 12px 5px 17px; float:left;">
                                                       
-                                            <h3 button class="inline-share-tools-label" id="hide" style="width:auto;display: inline-block; text-transform:uppercase;margin: 5px 0 5px -10px;padding:0 5px 0;">More Info</button></h3>
-                                            <h3 button class ="inline-share-tools-label" id="show" style="width:auto; display: inline-block; margin: 5px 0 5px -10px;text-transform:uppercase;padding: 0 5px 0;">Less Info</button></h3>
+                                            <button id="hide" style="display: inline-block; margin: 5px 0 5px -10px;">More Info</button>
+                                            <button id="show" style="display: inline-block; margin: 5px 0 5px -10px;">Less Info</button>
                                                
 
-                                                  <div class="moreattrib" style="display:none;text-transform:none;margin:10px 0 0 -10px;">
-                                                 
-                                                 <div class="icon"> <i class="fa fa-clock-o fa-2x"></i></div>  
-                                                      <div class="hours" style="height:50px; padding-top:5px;margin-left:-5px;">
+                                                  <div class="moreattrib" style="display:none;margin:10px 0 0 -10px;">
+                                                    Ticket Link:<br />
+                                                       Parking:  {{events.events[0].parking}}<br/>
                                                       Hours: <br />
-                                                          
-                                                      </div>
-
-                                                       <div class="icon"> <i class="fa fa-usd fa-2x"></i></div>  
-                                                      <div class="hours" style="height:50px; padding-top:5px;">
-                                                      Price Range:  <br />
-                                                          
-                                                      </div>
-                                                       <div class="icon"> <i class="fa fa-dashboard fa-2x"></i></div>  
-                                                      <div class="hours" style="height:50px; padding-top:5px;margin-left:-5px;">
-                                                      Parking: <br />
-                                                          
-                                                      </div>
-                                                       <div class="icon"> <i class="fa fa-credit-card fa-2x"></i></div>  
-                                                      <div class="hours" style="height:50px; padding-top:5px;margin-left:-5px;">
-                                                      Payment Options:<br />
-                                                          
-                                                      </div>
-                                                      
-                                                       <div class="icon"> <i class="fa fa-glass fa-2x"></i></div>  
-                                                      <div class="hours" style="height:50px; padding-top:5px;margin-left:-5px;">
-                                                      Alcohol: <br /></div>
-                                                          
-                                                      <div class="icon"> <i class="fa fa-users fa-2x"></i></div>  
-                                                      <div class="hours" style="height:50px; padding-top:5px;margin-left:-5px;">
-                                                      Kid Friendly:<br /></div>
-                                                          
-                                                      
-                                                     
-                                                  
-
-
-
-                                     </div>
+                                                      Payment Options: </div>
+                                     
 
                                     </div>
                             
                               </div>     
                       
 
-                  
+                  <div id="module-position-M6VXJJ_mdUI" class="story-asset inline-share-tools-asset" style="clear:both;"><div class="inline-share-tools asset-inline-share-tools asset-inline-share-tools-bottom">
+                        <span class="inline-share-tools-label">SHARE</span>
+
+                          <a class="inline-share-btn inline-share-btn-facebook" data-share-method="facebook" href="https://www.facebook.com/sharer.php?s=100&p[url]=http://indystar.com&p[title]={{events.events[0].title}}&p[summary]={{events.events[0].online_description}}" onclick="window.open(this.href, 'mywin',
+'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" data-uotrack="InlineShareFacebookBtn">
+                              <span class="inline-share-count inline-share-count-facebook"></span>
+                              
+                              <span class="inline-share-btn-label inline-share-btn-label-facebook">CONNECT</span>
+                          </a>
+                          <a class="inline-share-btn inline-share-btn-twitter" data-share-method="twitter" data-uotrack="InlineShareTwitterLink"  href="https://twitter.com/intent/tweet?url=http://indystar.com&text={{events.events[0].title}}&via=indystar" target="_blank" onclick="window.open(this.href, 'mywin',
+'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;">
+                              <span class="inline-share-count inline-share-count-twitter"></span>
+                              <span class="inline-share-btn-label inline-share-btn-label-twitter">TWEET</span>
+                          </a>  
+
+           
+            
+                          <a class="inline-share-btn inline-share-btn-email" href="mailto:?subject=Check out this event on Indystar.com!&body={{events.events[0].title}}, {{events.events[0].online_description}}" data-share-method="email" data-uotrack="InlineShareEmailBtn">
+                                    <span class="inline-share-count inline-share-count-email"></span>
+                                    <span class="inline-share-btn-label inline-share-btn-label-email">EMAIL</span>
+                          </a>
+
+                          <span class="inline-share-btn inline-share-btn-more" data-share-method="facebook" data-uotrack="InlineShareMoreBtn">
+                            <span class="inline-share-count inline-share-count">
+                              <img src="http://ec2-23-21-153-60.compute-1.amazonaws.com/digital/production/PlanetDiscover/icon.png">
+                            </span>
+                            <span class="inline-share-btn-label inline-share-btn-label-more">ADD</span>
+                          </span>
+                    </div>
+                  </div>
                 </div>
                 <aside class="story-right-rail">
                   <section id="module-position-M6VXJJ94XhQ" class="storyrightrail-bucket poster-ad-asset-module">
